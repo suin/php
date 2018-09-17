@@ -30,7 +30,6 @@
 *.xls   binary
 *.zip   binary
 
-/.dockerignore export-ignore
 /.envrc export-ignore
 /.gitattributes export-ignore
 /.github/ export-ignore
@@ -39,9 +38,8 @@
 /.travis.yml export-ignore
 /CHANGELOG.md export-ignore
 /code-quality/ export-ignore
-/docker-compose.yml export-ignore
-/docker/ export-ignore
 /LICENSE.md export-ignore
+/monorepo/ export-ignore
 /phpunit.xml export-ignore
 /README.md export-ignore
 

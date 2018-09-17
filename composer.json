@@ -3,38 +3,18 @@
     "description": "Monorepo of Suin's PHP works.",
     "keywords": [],
     "license": "MIT",
+    "authors": [
+        {
+            "name": "suin",
+            "email": "suinyeze@gmail.com",
+            "homepage": "https://github.com/suin",
+            "role": "Developer"
+        }
+    ],
     "minimum-stability": "stable",
-    "scripts": {
-        "git:configure": [
-            "git config core.commentchar '#'",
-            "@git:commit-template",
-            "cghooks update"
-        ],
-        "git:commit-template": "git config --add commit.template .gitmessage",
-        "qa:format": "php-cs-fixer fix --ansi --config code-quality/php-cs-fixer-config.php",
-        "qa:format:preview": "php-cs-fixer fix --ansi --config code-quality/php-cs-fixer-config.php --dry-run --diff --diff-format=udiff --verbose",
-        "qa:test": "phpdbg -qrr vendor/bin/phpunit --colors=always",
-        "qa:check": [
-            "@monorepo:validate",
-            "@qa:format:preview",
-            "@qa:test"
-        ],
-        "monorepo:merge": "monorepo-builder merge",
-        "monorepo:validate": "monorepo-builder validate",
-        "post-install-cmd": "cghooks add --ignore-lock",
-        "post-update-cmd": "@git:configure"
-    },
-    "scripts-descriptions": {
-        "git:configure": "Configures git settings.",
-        "git:commit-template": "Installs git commit template.",
-        "qa:format": "Fixes PHP code that does not follow coding standard.",
-        "qa:format:preview": "Previews above.",
-        "qa:test": "Runs unit tests.",
-        "qa:check": "Runs code analysis and unit tests.",
-        "monorepo:merge": "Merges \"composer.json\" from all found packages to root one.",
-        "monorepo:validate": "Validates synchronized versions in \"composer.json\" in all found packages."
-    },
+    "prefer-stable": true,
     "require": {
+        "php": ">=7.1 <7.4.0",
         "slevomat/coding-standard": ">=4.7 <5.0.0",
         "squizlabs/php_codesniffer": ">=3.3 <4.0.0"
     },
@@ -58,6 +38,41 @@
     },
     "config": {
         "sort-packages": true
+    },
+    "scripts": {
+        "git:configure": [
+            "git config core.commentchar '#'",
+            "@git:commit-template",
+            "cghooks update"
+        ],
+        "git:commit-template": "git config --add commit.template .gitmessage",
+        "qa:format": "php-cs-fixer fix --ansi --config code-quality/php-cs-fixer-config.php",
+        "qa:format:preview": "php-cs-fixer fix --ansi --config code-quality/php-cs-fixer-config.php --dry-run --diff --diff-format=udiff --verbose",
+        "qa:test": "phpdbg -qrr vendor/bin/phpunit --colors=always",
+        "qa:check": [
+            "@monorepo:validate",
+            "@qa:format:preview",
+            "@qa:test"
+        ],
+        "monorepo:fix-composer-json": "./monorepo/composer-json-fixer.php",
+        "monorepo:merge": [
+            "@monorepo:fix-composer-json",
+            "monorepo-builder merge -c monorepo/monorepo-builder.yml"
+        ],
+        "monorepo:validate": "monorepo-builder validate -c monorepo/monorepo-builder.yml",
+        "post-install-cmd": "cghooks add --ignore-lock",
+        "post-update-cmd": "@git:configure"
+    },
+    "scripts-descriptions": {
+        "git:configure": "Configures git settings.",
+        "git:commit-template": "Installs git commit template.",
+        "qa:format": "Fixes PHP coding style.",
+        "qa:format:preview": "Previews above.",
+        "qa:test": "Runs unit tests.",
+        "qa:check": "Runs code analysis and unit tests.",
+        "monorepo:fix-composer-json": "Fixes \"composer.json\" in all found packages by rules.",
+        "monorepo:merge": "Merges \"composer.json\" from all found packages to root one.",
+        "monorepo:validate": "Validates synchronized versions in \"composer.json\" in all found packages."
     },
     "extra": {
         "hooks": {

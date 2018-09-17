@@ -35,4 +35,5 @@ script:
 - composer qa:check
 
 after_script:
+- mv reports-coverage/clover.xml clover.xml
 - ./cc-test-reporter after-build --coverage-input-type clover --exit-code $TRAVIS_TEST_RESULT

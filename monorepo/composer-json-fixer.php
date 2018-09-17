@@ -225,6 +225,7 @@ $fixer = $fixerCombinator(
 $finder = Finder::create()
     ->files()
     ->in(__DIR__ . '/../packages')
+    ->depth(1)
     ->name('composer.json');
 
 /** @var SplFileInfo $composerFile */

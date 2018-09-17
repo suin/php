@@ -66,6 +66,7 @@
             "composer dump-autoload"
         ],
         "monorepo:validate": "monorepo-builder validate -c monorepo/monorepo-builder.yml",
+        "monorepo:release": "monorepo-builder split -c monorepo/monorepo-builder.yml",
         "post-install-cmd": "cghooks add --ignore-lock",
         "post-update-cmd": "@git:configure"
     },
@@ -78,7 +79,8 @@
         "qa:check": "Runs code analysis and unit tests.",
         "monorepo:fix-composer-json": "Fixes \"composer.json\" in all found packages by rules.",
         "monorepo:merge": "Merges \"composer.json\" from all found packages to root one.",
-        "monorepo:validate": "Validates synchronized versions in \"composer.json\" in all found packages."
+        "monorepo:validate": "Validates synchronized versions in \"composer.json\" in all found packages.",
+        "monorepo:release": "Splits packages and release them."
     },
     "extra": {
         "hooks": {

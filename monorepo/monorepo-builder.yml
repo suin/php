@@ -47,3 +47,5 @@ parameters:
       classmap:
       - vendor/squizlabs/php_codesniffer/src
 
+  directories_to_repositories:
+    packages/phpcs-psr4-class-name-sniff: git@github.com:suin/phpcs-psr4-class-name-sniff.git

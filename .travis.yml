@@ -1,5 +1,7 @@
 language: php
 
+sudo: false
+
 notifications:
   email:
     on_success: never
@@ -7,28 +9,32 @@ notifications:
 git:
   depth: 2
 
+php:
+- '7.1'
+- '7.2'
+- '7.3'
+- nightly
+
 matrix:
-  include:
-    - php: 7.1
-    - php: 7.2
-    - php: 7.3
-  fast_finish: true
+  allow_failures:
+  - php: nightly
+  - php: '7.3'
 
 cache:
   directories:
-    - $HOME/.composer/cache
+  - $HOME/.composer/cache
 
 before_script:
-  - travis_retry composer self-update
-  - travis_retry composer global require hirak/prestissimo # Rapid composer installation
-  - travis_retry composer install --no-interaction
-  - >
-    curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter &&
-    chmod +x ./cc-test-reporter &&
-    ./cc-test-reporter before-build
+- travis_retry composer self-update
+- travis_retry composer global require hirak/prestissimo # Rapid composer installation
+- travis_retry composer install --no-interaction --prefer-dist --prefer-stable
+- >
+  curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter &&
+  chmod +x ./cc-test-reporter &&
+  ./cc-test-reporter before-build
 
 script:
-  - composer qa:check
+- composer qa:check
 
 after_script:
-  - ./cc-test-reporter after-build --coverage-input-type clover --exit-code $TRAVIS_TEST_RESULT
+- ./cc-test-reporter after-build --coverage-input-type clover --exit-code $TRAVIS_TEST_RESULT

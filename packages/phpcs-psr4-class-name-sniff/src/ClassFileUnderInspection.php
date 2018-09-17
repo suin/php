@@ -19,7 +19,7 @@ final class ClassFileUnderInspection
     public function __construct(string $fileName, string $className)
     {
         $this->fileName = $fileName;
-        $this->className = ltrim($className, '\\');
+        $this->className = \ltrim($className, '\\');
     }
 
     public function getFileName(): string

@@ -67,7 +67,7 @@ $keyword_must_exist = function (array $json) use ($default_value): array {
 };
 
 $keyword_must_be_sorted_alphabetically = function (array $json): array {
-    if (array_key_exists('keywords', $json)) {
+    if (\array_key_exists('keywords', $json)) {
         sort($json['keywords']);
     }
     return $json;
@@ -114,24 +114,25 @@ $support_must_exist = function (array $json): array {
 
 $package_must_be_sorted = function (array $json): array {
     $sort_packages = function (array &$packages): void {
-        ksort($packages);
-        uksort(
+        \ksort($packages);
+        \uksort(
             $packages,
             function (string $a, string $b): int {
-                return (strpos($a, 'ext-') !== 0) <=> (strpos($b, 'ext-') !== 0);
+                return (\strncmp($a, 'ext-', 4) !== 0) <=>
+                    (\strncmp($b, 'ext-', 4) !== 0);
             }
         );
-        uksort(
+        \uksort(
             $packages,
             function (string $a, string $b): int {
                 return ($a !== 'php') <=> ($b !== 'php');
             }
         );
     };
-    if (array_key_exists('require', $json)) {
+    if (\array_key_exists('require', $json)) {
         $sort_packages($json['require']);
     }
-    if (array_key_exists('require-dev', $json)) {
+    if (\array_key_exists('require-dev', $json)) {
         $sort_packages($json['require-dev']);
     }
     return $json;
@@ -139,10 +140,10 @@ $package_must_be_sorted = function (array $json): array {
 
 $autoload_must_be_sorted = function (array $json): array {
     if (isset($json['autoload']['psr-4'])) {
-        ksort($json['autoload']['psr-4']);
+        \ksort($json['autoload']['psr-4']);
     }
     if (isset($json['autoload']['psr-0'])) {
-        ksort($json['autoload']['psr-0']);
+        \ksort($json['autoload']['psr-0']);
     }
     if (isset($json['autoload']['classmap'])) {
         sort($json['autoload']['classmap']);
@@ -154,10 +155,10 @@ $autoload_must_be_sorted = function (array $json): array {
         sort($json['autoload']['exclude-from-classmap']);
     }
     if (isset($json['autoload-dev']['psr-4'])) {
-        ksort($json['autoload-dev']['psr-4']);
+        \ksort($json['autoload-dev']['psr-4']);
     }
     if (isset($json['autoload-dev']['psr-0'])) {
-        ksort($json['autoload-dev']['psr-0']);
+        \ksort($json['autoload-dev']['psr-0']);
     }
     if (isset($json['autoload-dev']['classmap'])) {
         sort($json['autoload-dev']['classmap']);
@@ -182,12 +183,12 @@ $keys_must_be_arranged = function (array $keyOrder): callable {
     return function (array $json) use ($keyOrder): array {
         $result = [];
         foreach ($keyOrder as $key) {
-            if (array_key_exists($key, $json)) {
+            if (\array_key_exists($key, $json)) {
                 $result[$key] = $json[$key];
                 unset($json[$key]);
             }
         }
-        $result = array_merge($result, $json);
+        $result = \array_merge($result, $json);
         return $result;
     };
 };
@@ -220,6 +221,7 @@ $fixer = $fixerCombinator(
     $keys_must_be_arranged(KEY_ORDERS)
 );
 
+/** @var Finder $finder */
 $finder = Finder::create()
     ->files()
     ->in(__DIR__ . '/../packages')
@@ -236,7 +238,10 @@ foreach ($finder as $composerFile) {
         /** @noinspection PhpComposerExtensionStubsInspection */
         \file_put_contents(
             $composerFile->getRealPath(),
-            \json_encode($fixedJson, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . "\n"
+            \json_encode(
+                $fixedJson,
+                \JSON_PRETTY_PRINT | \JSON_UNESCAPED_SLASHES | \JSON_UNESCAPED_UNICODE
+            ) . "\n"
         );
         echo "Fixed: {$composerFile->getRealPath()}\n";
         $fixed++;

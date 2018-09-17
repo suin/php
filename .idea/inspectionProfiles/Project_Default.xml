@@ -3,6 +3,9 @@
     <option name="myName" value="Project Default" />
     <inspection_tool class="ArgumentEqualsDefaultValueInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="BadExceptionsProcessingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="CascadeStringReplacementInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="USE_SHORT_ARRAYS_SYNTAX" value="true" />
+    </inspection_tool>
     <inspection_tool class="CompactCanBeUsedInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="ComparisonOperandsOrderInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="CompositionAndInheritanceInspection" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -10,7 +13,6 @@
     <inspection_tool class="EfferentObjectCouplingInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="EmptyClassInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="FixedTimeStartWithInspection" enabled="true" level="WARNING" enabled_by_default="true" />
-    <inspection_tool class="ForeachSourceInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="ForgottenDebugOutputInspection" enabled="true" level="ERROR" enabled_by_default="true">
       <option name="configuration">
         <list>
@@ -76,16 +78,32 @@
       </option>
       <option name="migratedIntoUserSpace" value="true" />
     </inspection_tool>
+    <inspection_tool class="ImplicitMagicMethodCallInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="SUGGEST_USING_STRING_CASTING" value="true" />
+    </inspection_tool>
     <inspection_tool class="InconsistentLineSeparators" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="IncrementDecrementOperationEquivalentInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="PREFER_PREFIX_STYLE" value="false" />
+      <option name="PREFER_SUFFIX_STYLE" value="true" />
+    </inspection_tool>
     <inspection_tool class="InvertedIfElseConstructsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="IsEmptyFunctionUsageInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="REPORT_EMPTY_USAGE" value="true" />
+      <option name="SUGGEST_TO_USE_COUNT_CHECK" value="true" />
+    </inspection_tool>
     <inspection_tool class="LongLine" enabled="true" level="INFORMATION" enabled_by_default="true" />
     <inspection_tool class="MessDetectorValidationInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="MoreThanThreeArgumentsInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="MultipleReturnStatementsInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="NotInstalledPackage" enabled="true" level="INFORMATION" enabled_by_default="true" />
     <inspection_tool class="OffsetOperationsInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="OneTimeUseVariablesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ALLOW_LONG_STATEMENTS" value="true" />
+    </inspection_tool>
     <inspection_tool class="ParameterDefaultValueIsNotNullInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpAssignmentInConditionInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PhpAssignmentReplaceableWithOperatorAssignmentInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="PhpAssignmentReplaceableWithPrefixExpressionInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpCSValidationInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="CODING_STANDARD" value="Custom" />
       <option name="CUSTOM_RULESET_PATH" value="$PROJECT_DIR$/phpcs.xml" />
@@ -105,6 +123,9 @@
     <inspection_tool class="PhpFullyQualifiedNameUsageInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpFunctionNamingConventionInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpIllegalPsrClassPathInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PhpIncompatibleReturnTypeInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="STRICT_TYPE_CHECKING" value="true" />
+    </inspection_tool>
     <inspection_tool class="PhpMethodNamingConventionInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="m_regex" value="[a-z][A-Za-z\d_]*" />
       <option name="m_minLength" value="3" />
@@ -128,11 +149,16 @@
     </inspection_tool>
     <inspection_tool class="PhpShortOpenTagInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpStaticAsDynamicMethodCallInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
-    <inspection_tool class="PhpTooManyParametersInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PhpTooManyParametersInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="limit" value="3" />
+    </inspection_tool>
     <inspection_tool class="PhpTraditionalSyntaxArrayLiteralInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpUndefinedCallbackInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpUndefinedClassInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="DONT_REPORT_MULTI_RESOLVE" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PhpUnitTestsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="SUGGEST_TO_USE_ASSERTSAME" value="true" />
     </inspection_tool>
     <inspection_tool class="PhpUsageOfSilenceOperatorInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="PhpVariableNamingConventionInspection" enabled="true" level="WARNING" enabled_by_default="true">
@@ -195,6 +221,13 @@
       </option>
     </inspection_tool>
     <inspection_tool class="TodoComment" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnSafeIsSetOverArrayInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="SUGGEST_TO_USE_ARRAY_KEY_EXISTS" value="true" />
+    </inspection_tool>
+    <inspection_tool class="UnqualifiedReferenceInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="REPORT_ALL_FUNCTIONS" value="true" />
+      <option name="REPORT_CONSTANTS" value="true" />
+    </inspection_tool>
     <inspection_tool class="UntrustedInclusionInspection" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="UsingInclusionReturnValueInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
   </profile>

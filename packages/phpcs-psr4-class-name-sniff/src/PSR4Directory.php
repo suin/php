@@ -18,8 +18,8 @@ final class PSR4Directory
 
     public function __construct(string $directory, string $namespace)
     {
-        $this->directory = rtrim($directory, '/') . '/';
-        $this->namespace = rtrim($namespace, '\\') . '\\';
+        $this->directory = \rtrim($directory, '/') . '/';
+        $this->namespace = \rtrim($namespace, '\\') . '\\';
     }
 
     public function inspect(
@@ -54,17 +54,17 @@ final class PSR4Directory
     ): string {
         \assert($this->directoryEndsWithSlash());
         \assert($this->checkIfClassManagedUnderPSR4($classFile));
-        return substr($classFile->getFileName(), \strlen($this->directory));
+        return \substr($classFile->getFileName(), \strlen($this->directory));
     }
 
     private function getRelativeClassNameOf(string $relativeFileName): string
     {
-        $basename = basename($relativeFileName);
-        $filename = pathinfo($relativeFileName, \PATHINFO_FILENAME);
+        $basename = \basename($relativeFileName);
+        $filename = \pathinfo($relativeFileName, \PATHINFO_FILENAME);
         $dirname = $basename === $relativeFileName ?
             '' :
-            pathinfo($relativeFileName, \PATHINFO_DIRNAME) . '/';
-        return str_replace('/', '\\', $dirname) . $filename;
+            \pathinfo($relativeFileName, \PATHINFO_DIRNAME) . '/';
+        return \str_replace('/', '\\', $dirname) . $filename;
     }
 
     private function getAbsoluteClassNameOf(string $relativeClassName): string
@@ -76,16 +76,16 @@ final class PSR4Directory
     private function checkIfClassManagedUnderPSR4(
         ClassFileUnderInspection $classFile
     ): bool {
-        return strpos($classFile->getFileName(), $this->directory) === 0;
+        return \strpos($classFile->getFileName(), $this->directory) === 0;
     }
 
     private function namespaceEndsWithBackslash(): bool
     {
-        return substr($this->namespace, -1) === '\\';
+        return \substr($this->namespace, -1) === '\\';
     }
 
     private function directoryEndsWithSlash(): bool
     {
-        return substr($this->directory, -1) === '/';
+        return \substr($this->directory, -1) === '/';
     }
 }

@@ -22,9 +22,9 @@ final class PSR4ClassNameSniff implements Sniff
     public function register(): array
     {
         return [
-            T_CLASS,
-            T_INTERFACE,
-            T_TRAIT,
+            \T_CLASS,
+            \T_INTERFACE,
+            \T_TRAIT,
         ];
     }
 
@@ -60,7 +60,7 @@ final class PSR4ClassNameSniff implements Sniff
 
     private function getAutoloadConfiguration(): iterable
     {
-        $composerJson = json_decode(file_get_contents($this->composer), true);
+        $composerJson = \json_decode(\file_get_contents($this->composer), true);
         yield from $composerJson['autoload']['psr-4'] ?? [];
         yield from $composerJson['autoload-dev']['psr-4'] ?? [];
     }
@@ -71,7 +71,7 @@ final class PSR4ClassNameSniff implements Sniff
         int $typePointer
     ): void {
         $phpcsFile->addError(
-            sprintf(
+            \sprintf(
                 'Class name %s should be %s',
                 $result->getActualClassName(),
                 $result->getExpectedClassName()
@@ -85,6 +85,6 @@ final class PSR4ClassNameSniff implements Sniff
         File $phpcsFile,
         int $typePointer
     ): ?int {
-        return TokenHelper::findNext($phpcsFile, T_STRING, $typePointer + 1);
+        return TokenHelper::findNext($phpcsFile, \T_STRING, $typePointer + 1);
     }
 }

@@ -1,8 +1,16 @@
 {
     "name": "suin/phpcs-psr4-class-name-sniff",
     "type": "library",
-    "description": "",
-    "keywords": [],
+    "description": "PHP_CodeSniffer sniff that checks class name matches PSR-4 project structure.",
+    "keywords": [
+        "coding-standards",
+        "coding-style",
+        "namespace",
+        "php-codesniffer",
+        "phpcs",
+        "psr-4",
+        "static-analysis"
+    ],
     "homepage": "https://github.com/suin/php",
     "license": "MIT",
     "authors": [

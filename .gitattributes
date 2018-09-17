@@ -35,6 +35,7 @@
 /.github/ export-ignore
 /.gitignore export-ignore
 /.gitmessage export-ignore
+/.idea export-ignore
 /.travis.yml export-ignore
 /CHANGELOG.md export-ignore
 /code-quality/ export-ignore

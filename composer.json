@@ -15,6 +15,7 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.1 <7.4.0",
+        "ext-json": "*",
         "slevomat/coding-standard": ">=4.7 <5.0.0",
         "squizlabs/php_codesniffer": ">=3.3 <4.0.0"
     },
@@ -34,7 +35,10 @@
     "autoload-dev": {
         "psr-4": {
             "Suin\\PhpCodeSniffer\\PSR4ClassNameSniff\\": "packages/phpcs-psr4-class-name-sniff/tests"
-        }
+        },
+        "classmap": [
+            "vendor/squizlabs/php_codesniffer/src"
+        ]
     },
     "config": {
         "sort-packages": true
@@ -50,6 +54,7 @@
         "qa:format:preview": "php-cs-fixer fix --ansi --config code-quality/php-cs-fixer-config.php --dry-run --diff --diff-format=udiff --verbose",
         "qa:test": "phpdbg -qrr vendor/bin/phpunit --colors=always",
         "qa:check": [
+            "@monorepo:merge",
             "@monorepo:validate",
             "@qa:format:preview",
             "@qa:test"
@@ -57,7 +62,8 @@
         "monorepo:fix-composer-json": "./monorepo/composer-json-fixer.php",
         "monorepo:merge": [
             "@monorepo:fix-composer-json",
-            "monorepo-builder merge -c monorepo/monorepo-builder.yml"
+            "monorepo-builder merge -c monorepo/monorepo-builder.yml",
+            "composer dump-autoload"
         ],
         "monorepo:validate": "monorepo-builder validate -c monorepo/monorepo-builder.yml",
         "post-install-cmd": "cghooks add --ignore-lock",

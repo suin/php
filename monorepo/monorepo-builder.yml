@@ -43,3 +43,7 @@ parameters:
       roave/security-advisories: dev-master
       suin/php-cs-fixer-rules: ">=2.0 <3.0.0"
       symplify/monorepo-builder: ">=4.7 <5.0"
+    autoload-dev:
+      classmap:
+      - vendor/squizlabs/php_codesniffer/src
+

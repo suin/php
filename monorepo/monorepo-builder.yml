@@ -11,29 +11,29 @@ parameters:
   - packages
 
   section_order:
-   - name
-   - type
-   - description
-   - keywords
-   - homepage
-   - license
-   - authors
-   - minimum-stability
-   - prefer-stable
-   - support
-   - require
-   - require-dev
-   - conflict
-   - replace
-   - provide
-   - suggest
-   - autoload
-   - autoload-dev
-   - repositories
-   - config
-   - scripts
-   - scripts-descriptions
-   - extra
+  - name
+  - type
+  - description
+  - keywords
+  - homepage
+  - license
+  - authors
+  - minimum-stability
+  - prefer-stable
+  - support
+  - require
+  - require-dev
+  - conflict
+  - replace
+  - provide
+  - suggest
+  - autoload
+  - autoload-dev
+  - repositories
+  - config
+  - scripts
+  - scripts-descriptions
+  - extra
 
   data_to_append:
     require-dev:

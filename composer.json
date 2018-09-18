@@ -28,13 +28,13 @@
         "symplify/monorepo-builder": ">=4.7 <5.0"
     },
     "autoload": {
-        "psr-4": {
-            "Suin\\PhpCodeSniffer\\PSR4ClassNameSniff\\": "packages/phpcs-psr4-class-name-sniff/src"
+        "psr-0": {
+            "Suin\\Sniffs\\Classes\\": "packages/phpcs-psr4-sniff/src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Suin\\PhpCodeSniffer\\PSR4ClassNameSniff\\": "packages/phpcs-psr4-class-name-sniff/tests"
+            "Suin\\Sniffs\\Classes\\": "packages/phpcs-psr4-sniff/tests"
         },
         "classmap": [
             "vendor/squizlabs/php_codesniffer/src"

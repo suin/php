@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Suin\PhpCodeSniffer\PSR4ClassNameSniff;
+namespace Suin\Sniffs\Classes\PSR4;
 
 use PHPUnit\Framework\TestCase;
 
@@ -13,16 +13,16 @@ final class ExampleTest extends TestCase
      */
     public function example(): void
     {
-        $psr4 = new PSR4Directories(
-            new PSR4Directory(
+        $psr4 = new AutoloadabilityInspectors(
+            new AutoloadabilityInspector(
                 'packages/validator/src',
                 'Monorepo\\Component\\Validator\\'
             ),
-            new PSR4Directory(
+            new AutoloadabilityInspector(
                 'packages/validator/test/unit',
                 'Test\\Unit\\Monorepo\\Component\\Validator\\'
             ),
-            new PSR4Directory(
+            new AutoloadabilityInspector(
                 'packages/validator/test/integration',
                 'Test\\Integration\\Monorepo\\Component\\Validator\\'
             )
@@ -34,16 +34,16 @@ final class ExampleTest extends TestCase
         );
 
         $result = $psr4->inspect($validClassFile);
-        self::assertTrue($result->isPSR4CorrectClassName());
+        self::assertTrue($result->isAutoloadable());
 
         $invalidClassFile = new ClassFileUnderInspection(
             'packages/validator/test/unit/ValidatorTest.php',
             'Monorepo\\Component\\Validator\\ValidatorTest'
         );
 
-        /** @var PSR4InvalidPSR4Class $result */
+        /** @var NonAutoloadableClass $result */
         $result = $psr4->inspect($invalidClassFile);
-        self::assertFalse($result->isPSR4CorrectClassName());
+        self::assertFalse($result->isAutoloadable());
         self::assertSame(
             'Monorepo\\Component\\Validator\\ValidatorTest',
             $result->getActualClassName()

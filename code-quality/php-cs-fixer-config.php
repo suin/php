@@ -6,6 +6,7 @@ return PhpCsFixer\Config::create()
     ->setRules(Suin\PhpCsFixer\Rules::create())
     ->setFinder(PhpCsFixer\Finder::create()
         ->exclude('vendor')
+        ->notPath('tests/demo')
         ->in('packages')
     )
     ;

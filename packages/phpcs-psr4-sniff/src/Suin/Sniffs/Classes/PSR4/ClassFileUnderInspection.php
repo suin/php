@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Suin\PhpCodeSniffer\PSR4ClassNameSniff;
+namespace Suin\Sniffs\Classes\PSR4;
 
 final class ClassFileUnderInspection
 {

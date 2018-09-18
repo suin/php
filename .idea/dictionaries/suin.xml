@@ -1,12 +1,17 @@
 <component name="ProjectDictionaryState">
   <dictionary name="suin">
     <words>
+      <w>autoloadability</w>
+      <w>autoloadable</w>
+      <w>basepath</w>
       <w>codesniffer</w>
       <w>dirname</w>
       <w>gitattributes</w>
       <w>gitignore</w>
       <w>monorepo</w>
+      <w>phpcodesniffer</w>
       <w>phpcs</w>
+      <w>ruleset</w>
       <w>slevomat</w>
       <w>squizlabs</w>
       <w>suin</w>

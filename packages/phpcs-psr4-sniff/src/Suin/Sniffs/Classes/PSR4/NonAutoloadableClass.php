@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Suin\PhpCodeSniffer\PSR4ClassNameSniff;
+namespace Suin\Sniffs\Classes\PSR4;
 
-final class PSR4InvalidPSR4Class implements PSR4ClassNameInspectionResult
+final class NonAutoloadableClass implements InspectionResult
 {
     /**
      * @var string
@@ -24,12 +24,12 @@ final class PSR4InvalidPSR4Class implements PSR4ClassNameInspectionResult
         $this->actualClassName = $actualClassName;
     }
 
-    public function isPSR4CorrectClassName(): bool
+    public function isAutoloadable(): bool
     {
         return false;
     }
 
-    public function isManagedUnderPSR4(): bool
+    public function isPsr4RelatedClass(): bool
     {
         return true;
     }

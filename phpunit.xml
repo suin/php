@@ -9,6 +9,7 @@
          colors="true">
     <testsuite name="all">
         <directory>packages/*/tests</directory>
+        <exclude>packages/phpcs-psr4-sniff/tests/demo</exclude>
     </testsuite>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">

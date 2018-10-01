@@ -50,8 +50,8 @@
             "cghooks update"
         ],
         "git:commit-template": "git config --add commit.template .gitmessage",
-        "qa:format": "php-cs-fixer fix --ansi --config code-quality/php-cs-fixer-config.php",
-        "qa:format:preview": "php-cs-fixer fix --ansi --config code-quality/php-cs-fixer-config.php --dry-run --diff --diff-format=udiff --verbose",
+        "qa:format": "php-cs-fixer fix --ansi --config code-quality/.php_cs.dist",
+        "qa:format:preview": "php-cs-fixer fix --ansi --config code-quality/.php_cs.dist --dry-run --diff --diff-format=udiff --verbose",
         "qa:test": "phpdbg -qrr vendor/bin/phpunit --colors=always",
         "qa:check": [
             "@monorepo:merge",

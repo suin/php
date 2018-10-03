@@ -1,5 +1,24 @@
 ## [Unreleased]
 
+## [v1.1.0] - 2018-10-03
+
+### Bug Fixes
+
+- **symplify-cs-fixer**: fix package name
+
+### Chores
+
+- **monorepo**: enable PhpStorm inspection based on PHP-CS-Fixer rules
+
+### Documentation
+
+- **monorepo**: write changelog for v1.0.0
+- **phpcs-psr4-sniff**: improve demo
+
+### Features
+
+- **symplify-cs-fixer**: add first implementation
+
 ## v1.0.0 - 2018-09-19
 
 ### Chores
@@ -29,5 +48,6 @@
 - **phpcs-psr4-sniff**: improve implementation and add test codes
 - **phpcs-psr4-sniff**: implement first version
 
-[Unreleased]: https://github.com/suin/php/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/suin/php/compare/v1.1.0...HEAD
+[v1.1.0]: https://github.com/suin/php/compare/v1.0.0...v1.1.0
 

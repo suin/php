@@ -41,11 +41,13 @@ parameters:
       friendsofphp/php-cs-fixer: ">=2.13 <3.0.0"
       phpunit/phpunit: ">=7.3 <7.4"
       roave/security-advisories: dev-master
+      slam/php-cs-fixer-extensions: ">=1.17 <2.0.0"
       suin/php-cs-fixer-rules: ">=2.0 <3.0.0"
-      symplify/monorepo-builder: ">=4.7 <5.0"
+      symplify/monorepo-builder: ">=5.0 <6.0.0"
     autoload-dev:
       classmap:
       - vendor/squizlabs/php_codesniffer/src
 
   directories_to_repositories:
     packages/phpcs-psr4-sniff: git@github.com:suin/phpcs-psr4-sniff.git
+    packages/symplify-cs-fixer: git@github.com:suin/symplify-cs-fixer.git

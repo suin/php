@@ -4,6 +4,7 @@ parameters:
   - authors
   - require
   - require-dev
+  - conflict
   - autoload
   - autoload-dev
 
@@ -42,7 +43,6 @@ parameters:
       phpunit/phpunit: ">=7.3 <7.4"
       roave/security-advisories: dev-master
       slam/php-cs-fixer-extensions: ">=1.17 <2.0.0"
-      suin/php-cs-fixer-rules: ">=2.0 <3.0.0"
       symplify/monorepo-builder: ">=5.0 <6.0.0"
     autoload-dev:
       classmap:

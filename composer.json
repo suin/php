@@ -16,6 +16,12 @@
             "email": "suinyeze@gmail.com",
             "homepage": "https://github.com/suin",
             "role": "Developer"
+        },
+        {
+            "name": "suin",
+            "email": "suinyeze@gmail.com",
+            "homepage": "https://github.com/suin",
+            "role": "Developer"
         }
     ],
     "minimum-stability": "stable",
@@ -34,13 +40,18 @@
         "phpunit/phpunit": ">=7.3 <7.4",
         "roave/security-advisories": "dev-master",
         "slam/php-cs-fixer-extensions": ">=1.17 <2.0.0",
-        "suin/php-cs-fixer-rules": ">=2.0 <3.0.0",
         "symplify/monorepo-builder": ">=5.0 <6.0.0"
+    },
+    "conflict": {
+        "friendsofphp/php-cs-fixer": "<2.13"
     },
     "autoload": {
         "psr-4": {
             "SymplifyCsFixer\\": "packages/symplify-cs-fixer/src"
         },
+        "classmap": [
+            "packages/php-cs-fixer-rules/src/"
+        ],
         "psr-0": {
             "Suin\\Sniffs\\Classes\\": "packages/phpcs-psr4-sniff/src"
         }

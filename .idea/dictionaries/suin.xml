@@ -6,17 +6,24 @@
       <w>basepath</w>
       <w>codesniffer</w>
       <w>dirname</w>
+      <w>ereg</w>
+      <w>fopen</w>
       <w>gitattributes</w>
       <w>gitignore</w>
+      <w>homoglyph</w>
+      <w>issets</w>
       <w>monorepo</w>
       <w>phpcodesniffer</w>
       <w>phpcs</w>
       <w>ruleset</w>
+      <w>singleline</w>
       <w>slevomat</w>
       <w>squizlabs</w>
       <w>suin</w>
       <w>symplify</w>
+      <w>typehint</w>
       <w>unmanaged</w>
+      <w>unsets</w>
       <w>vendored</w>
     </words>
   </dictionary>

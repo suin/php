@@ -2,53 +2,45 @@
 
 declare(strict_types=1);
 
-use SymplifyCsFixer\SymplifyFixers;
-
-$symplifyFixers = new SymplifyFixers();
-
 return PhpCsFixer\Config::create()
     ->setCacheFile(__DIR__ . '/.php_cs.cache')
     ->setRiskyAllowed(true)
+    ->registerCustomFixers(new SymplifyCsFixer\SymplifyCsFixers())
     ->registerCustomFixers(
         [
             new SlamCsFixer\FinalInternalClassFixer(),
             new SlamCsFixer\InlineCommentSpacerFixer(),
-            $symplifyFixers('standalone_line_in_multiline_array'),
-            $symplifyFixers('block_property_comment'),
-            $symplifyFixers('remove_empty_doc_block'),
-            $symplifyFixers('remove_superfluous_doc_block_whitespace'),
-            $symplifyFixers('remove_useless_doc_block'),
-            $symplifyFixers('require_followed_by_absolute_path'),
-            $symplifyFixers('line_length'),
-            $symplifyFixers('property_name_matching_type'),
-            $symplifyFixers('method_order_by_type'),
-            $symplifyFixers('class_string_to_class_constant'),
-            $symplifyFixers('array_property_default_value'),
-            $symplifyFixers('final_interface'),
-            $symplifyFixers('blank_line_after_strict_types'),
         ]
     )
     ->setRules(
-        Suin\PhpCsFixer\Rules::create() + [
-            'Slam/inline_comment_spacer' => true,
-            'Symplify/standalone_line_in_multiline_array' => true,
-            'Symplify/block_property_comment' => true,
-            'Symplify/remove_empty_doc_block' => true,
-            'Symplify/remove_superfluous_doc_block_whitespace' => true,
-            'Symplify/remove_useless_doc_block' => false,
-            'Symplify/require_followed_by_absolute_path' => true,
-            'Symplify/line_length' => [
-                'line_length' => 80,
-                'break_long_lines' => true,
-                'inline_short_lines' => true,
-            ],
-            'Symplify/property_name_matching_type' => false,
-            'Symplify/method_order_by_type' => false,
-            'Symplify/class_string_to_class_constant' => true,
-            'Symplify/array_property_default_value' => true,
-            'Symplify/final_interface' => true,
-            'Symplify/blank_line_after_strict_types' => true,
-        ]
+        Suin\PhpCsFixer\Rules::create(
+            [
+                'phpdoc_to_comment' => false,
+                'Slam/inline_comment_spacer' => true,
+                SymplifyCsFixer\StandaloneLineInMultilineArrayFixer::NAME => true,
+                SymplifyCsFixer\BlockPropertyCommentFixer::NAME => true,
+                SymplifyCsFixer\RemoveEmptyDocBlockFixer::NAME => true,
+                SymplifyCsFixer\RemoveSuperfluousDocBlockWhitespaceFixer::NAME => true,
+                SymplifyCsFixer\RemoveUselessDocBlockFixer::NAME => [
+                    'useless_types' => [],
+                ],
+                SymplifyCsFixer\RequireFollowedByAbsolutePathFixer::NAME => true,
+                SymplifyCsFixer\LineLengthFixer::NAME => [
+                    'line_length' => 80,
+                    'break_long_lines' => true,
+                    'inline_short_lines' => true,
+                ],
+//                SymplifyCsFixer\PropertyNameMatchingTypeFixer::NAME => true,
+                SymplifyCsFixer\MethodOrderByTypeFixer::NAME => true,
+                SymplifyCsFixer\ClassStringToClassConstantFixer::NAME => true,
+                SymplifyCsFixer\ArrayPropertyDefaultValueFixer::NAME => true,
+                SymplifyCsFixer\FinalInterfaceFixer::NAME => true,
+                SymplifyCsFixer\BlankLineAfterStrictTypesFixer::NAME => true,
+                SymplifyCsFixer\PrivateMethodOrderByUseFixer::NAME => true,
+                SymplifyCsFixer\PropertyOrderByComplexityFixer::NAME => true,
+                SymplifyCsFixer\ParamReturnAndVarTagMalformsFixer::NAME => true,
+            ]
+        )
     )
     ->setFinder(
         PhpCsFixer\Finder::create()

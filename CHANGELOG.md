@@ -1,5 +1,15 @@
 ## [Unreleased]
 
+## [v2.0.0] - 2018-12-05
+
+### Documentation
+
+- **monorepo**: write changelog for v1.2.1
+
+### Features
+
+- **symplify-cs-fixer**: redesign package structure
+
 ## [v1.2.1] - 2018-11-28
 
 ### Bug Fixes
@@ -72,7 +82,8 @@
 - **phpcs-psr4-sniff**: improve implementation and add test codes
 - **phpcs-psr4-sniff**: implement first version
 
-[Unreleased]: https://github.com/suin/php/compare/v1.2.1...HEAD
+[Unreleased]: https://github.com/suin/php/compare/v2.0.0...HEAD
+[v2.0.0]: https://github.com/suin/php/compare/v1.2.1...v2.0.0
 [v1.2.1]: https://github.com/suin/php/compare/v1.2.0...v1.2.1
 [v1.2.0]: https://github.com/suin/php/compare/v1.1.0...v1.2.0
 [v1.1.0]: https://github.com/suin/php/compare/v1.0.0...v1.1.0

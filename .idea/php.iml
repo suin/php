@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/packages/phpcs-psr4-sniff/tests" isTestSource="true" packagePrefix="Suin\Sniffs\Classes\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/symplify-cs-fixer/tests" isTestSource="true" packagePrefix="SymplifyCsFixer\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/symplify-cs-fixer/src" isTestSource="false" packagePrefix="SymplifyCsFixer\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/phpcs-psr4-sniff/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

@@ -6,21 +6,27 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "suin",
             "email": "suinyeze@gmail.com",
             "homepage": "https://github.com/suin",
+            "name": "suin",
             "role": "Developer"
         },
         {
-            "name": "suin",
             "email": "suinyeze@gmail.com",
             "homepage": "https://github.com/suin",
+            "name": "suin",
             "role": "Developer"
         },
         {
-            "name": "suin",
             "email": "suinyeze@gmail.com",
             "homepage": "https://github.com/suin",
+            "name": "suin",
+            "role": "Developer"
+        },
+        {
+            "email": "suinyeze@gmail.com",
+            "homepage": "https://github.com/suin",
+            "name": "suin",
             "role": "Developer"
         }
     ],
@@ -47,18 +53,20 @@
         "friendsofphp/php-cs-fixer": "<2.13"
     },
     "autoload": {
-        "psr-4": {
-            "SymplifyCsFixer\\": "packages/symplify-cs-fixer/src"
-        },
         "classmap": [
             "packages/php-cs-fixer-rules/src/"
         ],
         "psr-0": {
             "Suin\\Sniffs\\Classes\\": "packages/phpcs-psr4-sniff/src"
+        },
+        "psr-4": {
+            "Suin\\Debug\\Timer\\": "packages/debug-timer/src",
+            "SymplifyCsFixer\\": "packages/symplify-cs-fixer/src"
         }
     },
     "autoload-dev": {
         "psr-4": {
+            "Suin\\Debug\\Timer\\": "packages/debug-timer/tests",
             "Suin\\Sniffs\\Classes\\": "packages/phpcs-psr4-sniff/tests",
             "SymplifyCsFixer\\": "packages/symplify-cs-fixer/tests"
         },

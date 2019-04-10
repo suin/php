@@ -6,6 +6,8 @@
       <sourceFolder url="file://$MODULE_DIR$/packages/symplify-cs-fixer/tests" isTestSource="true" packagePrefix="SymplifyCsFixer\" />
       <sourceFolder url="file://$MODULE_DIR$/packages/symplify-cs-fixer/src" isTestSource="false" packagePrefix="SymplifyCsFixer\" />
       <sourceFolder url="file://$MODULE_DIR$/packages/phpcs-psr4-sniff/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/debug-timer/tests" isTestSource="true" packagePrefix="Suin\Debug\Timer\" />
+      <sourceFolder url="file://$MODULE_DIR$/packages/debug-timer/src" isTestSource="false" packagePrefix="Suin\Debug\Timer\" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

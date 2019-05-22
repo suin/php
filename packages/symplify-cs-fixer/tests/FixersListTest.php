@@ -7,7 +7,7 @@ namespace SymplifyCsFixer;
 use PHPUnit\Framework\TestCase;
 
 /** @noinspection EfferentObjectCouplingInspection */
-class FixersListTest extends TestCase
+final class FixersListTest extends TestCase
 {
     public function test_list_fixers(): void
     {

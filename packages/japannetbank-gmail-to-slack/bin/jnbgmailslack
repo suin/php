@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use Suin\Jnb\GmailToSlack\App;
+
+$loaderPaths = [
+    __DIR__ . '/../vendor/autoload.php', // for ./vendor/bin/jnbgmailslack
+    __DIR__ . '/../../../vendor/autoload.php', // for monorepo
+];
+foreach ($loaderPaths as $file) {
+    if (is_file($file) && is_readable($file)) {
+        /** @noinspection PhpIncludeInspection */
+        require $file;
+        break;
+    }
+}
+
+$gmailAccount = getenv('GMAIL_ACCOUNT');
+$slackWebhookUrl = getenv('SLACK_WEBHOOK_URL');
+
+if (!$gmailAccount) {
+    echo 'Set GMAIL_ACCOUNT', PHP_EOL;
+    exit(1);
+}
+if (!$slackWebhookUrl) {
+    echo 'Set SLACK_WEBHOOK_URL', PHP_EOL;
+    exit(1);
+}
+if (!getenv('GOOGLE_APPLICATION_CREDENTIALS')) {
+    echo 'Set GOOGLE_APPLICATION_CREDENTIALS', PHP_EOL;
+    exit(1);
+}
+
+$app = new App($gmailAccount, $slackWebhookUrl);
+$app->run();

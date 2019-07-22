@@ -1,13 +1,11 @@
 {
-    "name": "suin/symplify-cs-fixer",
+    "name": "suin/japannetbank-gmail-to-slack",
     "type": "library",
-    "description": "Make Symplify Coding Standard's fixers work with PHP-CS-Fixer",
+    "description": "Send notifications from Japan Net Back to slack",
     "keywords": [
-        "coding-standards",
-        "coding-style",
-        "php-cs-fixer",
-        "static-analysis",
-        "symplify-coding-standard"
+        "banking",
+        "finance",
+        "japan-net-back"
     ],
     "homepage": "https://github.com/suin/php",
     "license": "MIT",
@@ -26,22 +24,24 @@
     },
     "require": {
         "php": ">=7.1 <7.4.0",
-        "symfony/finder": ">=4.2 <5.0.0",
-        "symplify/better-phpdoc-parser": ">=5.0 <=5.4.2",
-        "symplify/coding-standard": ">=5.0 <=5.4.2",
-        "symplify/easy-coding-standard": ">=5.0 <=5.4.2"
+        "google/apiclient": "^2.0",
+        "google/apiclient-services": "^0.104.0",
+        "maknz/slack": "^1.7"
     },
     "autoload": {
         "psr-4": {
-            "SymplifyCsFixer\\": "src"
+            "Suin\\Jnb\\GmailToSlack\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "SymplifyCsFixer\\": "tests"
+            "Suin\\Jnb\\GmailToSlack\\": "tests"
         }
     },
     "config": {
         "sort-packages": true
-    }
+    },
+    "bin": [
+        "bin/"
+    ]
 }

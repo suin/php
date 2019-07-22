@@ -28,6 +28,12 @@
             "homepage": "https://github.com/suin",
             "name": "suin",
             "role": "Developer"
+        },
+        {
+            "email": "suinyeze@gmail.com",
+            "homepage": "https://github.com/suin",
+            "name": "suin",
+            "role": "Developer"
         }
     ],
     "minimum-stability": "stable",
@@ -35,11 +41,15 @@
     "require": {
         "php": ">=7.1 <7.4.0",
         "ext-json": "*",
+        "google/apiclient": "^2.0",
+        "google/apiclient-services": "^0.104.0",
+        "maknz/slack": "^1.7",
         "slevomat/coding-standard": ">=4.7 <5.0.0",
         "squizlabs/php_codesniffer": ">=3.3 <4.0.0",
         "symfony/finder": ">=4.2 <5.0.0",
-        "symplify/coding-standard": ">=5.0 <6.0.0",
-        "symplify/easy-coding-standard": ">=5.0 <6.0.0"
+        "symplify/better-phpdoc-parser": ">=5.0 <=5.4.2",
+        "symplify/coding-standard": ">=5.0 <=5.4.2",
+        "symplify/easy-coding-standard": ">=5.0 <=5.4.2"
     },
     "require-dev": {
         "brainmaestro/composer-git-hooks": ">=2.5 <3.0.0",
@@ -52,6 +62,13 @@
     "conflict": {
         "friendsofphp/php-cs-fixer": "<2.13"
     },
+    "replace": {
+        "suin/debug-timer": "self.version",
+        "suin/japannetbank-gmail-to-slack": "self.version",
+        "suin/php-cs-fixer-rules": "self.version",
+        "suin/phpcs-psr4-sniff": "self.version",
+        "suin/symplify-cs-fixer": "self.version"
+    },
     "autoload": {
         "classmap": [
             "packages/php-cs-fixer-rules/src/"
@@ -61,12 +78,14 @@
         },
         "psr-4": {
             "Suin\\Debug\\Timer\\": "packages/debug-timer/src",
+            "Suin\\Jnb\\GmailToSlack\\": "packages/japannetbank-gmail-to-slack/src",
             "SymplifyCsFixer\\": "packages/symplify-cs-fixer/src"
         }
     },
     "autoload-dev": {
         "psr-4": {
             "Suin\\Debug\\Timer\\": "packages/debug-timer/tests",
+            "Suin\\Jnb\\GmailToSlack\\": "packages/japannetbank-gmail-to-slack/tests",
             "Suin\\Sniffs\\Classes\\": "packages/phpcs-psr4-sniff/tests",
             "SymplifyCsFixer\\": "packages/symplify-cs-fixer/tests"
         },

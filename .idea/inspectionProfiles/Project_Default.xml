@@ -10,6 +10,11 @@
     <inspection_tool class="ComparisonOperandsOrderInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="CompositionAndInheritanceInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="DisallowWritingIntoStaticPropertiesInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <Languages>
+        <language minSize="47" name="PHP" />
+      </Languages>
+    </inspection_tool>
     <inspection_tool class="EfferentObjectCouplingInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="EmptyClassInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="FixedTimeStartWithInspection" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -202,11 +207,16 @@
     <inspection_tool class="SecurityAdvisoriesInspection" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="optionConfiguration">
         <list>
+          <option value="barryvdh/laravel-debugbar" />
           <option value="behat/behat" />
           <option value="brianium/paratest" />
           <option value="codeception/codeception" />
+          <option value="codeception/mockery-module" />
+          <option value="codeception/specify" />
+          <option value="codeception/verify" />
           <option value="codedungeon/phpunit-result-printer" />
           <option value="composer/composer" />
+          <option value="doctrine/coding-standard" />
           <option value="filp/whoops" />
           <option value="friendsofphp/php-cs-fixer" />
           <option value="humbug/humbug" />
@@ -220,6 +230,7 @@
           <option value="pdepend/pdepend" />
           <option value="phan/phan" />
           <option value="phing/phing" />
+          <option value="phpcompatibility/php-compatibility" />
           <option value="phpmd/phpmd" />
           <option value="phpro/grumphp" />
           <option value="phpspec/phpspec" />

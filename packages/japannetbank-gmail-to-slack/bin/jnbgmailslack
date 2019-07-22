@@ -6,7 +6,8 @@ declare(strict_types=1);
 use Suin\Jnb\GmailToSlack\App;
 
 $loaderPaths = [
-    __DIR__ . '/../vendor/autoload.php', // for ./vendor/bin/jnbgmailslack
+    __DIR__ . '/../vendor/autoload.php', // for ./vendor/bin/jnbgmailslack (no-symlink)
+    __DIR__ . '/../../../autoload.php', // for ./vendor/bin/jnbgmailslack (symlink)
     __DIR__ . '/../../../vendor/autoload.php', // for monorepo
 ];
 foreach ($loaderPaths as $file) {

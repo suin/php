@@ -42,6 +42,6 @@
         "sort-packages": true
     },
     "bin": [
-        "bin/"
+        "bin/jnbgmailslack"
     ]
 }

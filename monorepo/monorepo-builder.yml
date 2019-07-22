@@ -49,6 +49,7 @@ parameters:
       - vendor/squizlabs/php_codesniffer/src
 
   directories_to_repositories:
+    packages/japannetbank-gmail-to-slack: git@github.com:suin/japannetbank-gmail-to-slack.git
     packages/php-cs-fixer-rules: git@github.com:suin/php-cs-fixer-rules.git
     packages/phpcs-psr4-sniff: git@github.com:suin/phpcs-psr4-sniff.git
     packages/symplify-cs-fixer: git@github.com:suin/symplify-cs-fixer.git

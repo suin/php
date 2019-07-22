@@ -6,6 +6,8 @@
 /phpunit.xml export-ignore
 /README.md export-ignore
 /tests export-ignore
+/docker-compose.yml export-ignore
+/Dockerfile export-ignore
 
 * linguist-vendored
 /src/**/* linguist-vendored=false

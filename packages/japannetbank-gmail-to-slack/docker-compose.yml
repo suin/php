@@ -1,0 +1,15 @@
+version: '2'
+services:
+  app:
+    build: .
+    command: sh -c 'composer install && go-cron -s "@every 5m" -- ./bin/jnbgmailslack'
+    environment:
+      GMAIL_ACCOUNT: ${GMAIL_ACCOUNT}
+      SLACK_WEBHOOK_URL: ${SLACK_WEBHOOK_URL}
+    volumes:
+      - ".:/app"
+    restart: always
+    logging:
+      options:
+        max-size: 10k
+        max-file: "5"

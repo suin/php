@@ -22,7 +22,7 @@ final class Email
     private $body;
 
     /**
-     * @var ProcessedLabelAdder
+     * @var ProcessedLabelAdderInterface
      */
     private $processedLabelAdder;
 
@@ -30,7 +30,7 @@ final class Email
         string $emailId,
         string $subject,
         string $body,
-        ProcessedLabelAdder $processedLabelAdder
+        ProcessedLabelAdderInterface $processedLabelAdder
     ) {
         $this->emailId = $emailId;
         $this->subject = $subject;

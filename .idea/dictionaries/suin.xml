@@ -28,6 +28,7 @@
       <w>unmanaged</w>
       <w>unsets</w>
       <w>vendored</w>
+      <w>webhook</w>
     </words>
   </dictionary>
 </component>

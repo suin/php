@@ -1,0 +1,33 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use Suin\Jnb\GmailToSlack\DevTools\TestSlackNotification;
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$gmailAccount = getenv('GMAIL_ACCOUNT');
+$slackWebhookUrl = getenv('SLACK_WEBHOOK_URL');
+$messageId = $argv[1] ?? '';
+
+if (!$gmailAccount) {
+    echo 'Set GMAIL_ACCOUNT', PHP_EOL;
+    exit(1);
+}
+if (!$slackWebhookUrl) {
+    echo 'Set SLACK_WEBHOOK_URL', PHP_EOL;
+    exit(1);
+}
+if (!$messageId) {
+    echo 'missing <message_id>', PHP_EOL;
+    exit(1);
+}
+
+if (!getenv('GOOGLE_APPLICATION_CREDENTIALS')) {
+    echo 'Set GOOGLE_APPLICATION_CREDENTIALS', PHP_EOL;
+    exit(1);
+}
+
+$app = new TestSlackNotification();
+$app->testSlackNotification($gmailAccount, $slackWebhookUrl, $messageId);

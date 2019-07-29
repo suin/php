@@ -4,18 +4,15 @@ declare(strict_types=1);
 
 namespace Suin\Jnb\GmailToSlack\DevTools;
 
-use Google_Client;
 use Google_Service_Gmail;
 use Google_Service_Gmail_Message;
+use Suin\Jnb\GmailToSlack\DefaultGoogleClient;
 
 final class DownloadJnbEmails
 {
     public function downloadJnbEmails(string $email): void
     {
-        $client = new Google_Client();
-        $client->useApplicationDefaultCredentials();
-        $client->addScope(Google_Service_Gmail::GMAIL_MODIFY);
-        $client->setApplicationName('JapannetbankGmailToSlack');
+        $client = DefaultGoogleClient::create();
         $client->setSubject($email);
 
         $gmail = new Google_Service_Gmail($client);
@@ -49,7 +46,10 @@ final class DownloadJnbEmails
             $data .= $this->decode(
                 $message->getPayload()->getBody()->getData()
             );
-            \file_put_contents("./emails/${date}-${subject}-${messageId}.txt", $data);
+            \file_put_contents(
+                "./emails/${date}-${subject}-${messageId}.txt",
+                $data
+            );
         }
     }
 

@@ -7,7 +7,7 @@ namespace Suin\Jnb\GmailToSlack;
 use Google_Service_Gmail;
 use Google_Service_Gmail_ModifyMessageRequest;
 
-final class ProcessedLabelAdder
+final class ProcessedLabelAdder implements ProcessedLabelAdderInterface
 {
     /**
      * @var string

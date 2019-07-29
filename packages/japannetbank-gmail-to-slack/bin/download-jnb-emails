@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+use Suin\Jnb\GmailToSlack\DevTools\DownloadJnbEmails;
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$gmailAccount = getenv('GMAIL_ACCOUNT');
+
+if (!$gmailAccount) {
+    echo 'Set GMAIL_ACCOUNT', PHP_EOL;
+    exit(1);
+}
+if (!getenv('GOOGLE_APPLICATION_CREDENTIALS')) {
+    echo 'Set GOOGLE_APPLICATION_CREDENTIALS', PHP_EOL;
+    exit(1);
+}
+
+$app = new DownloadJnbEmails();
+$app->downloadJnbEmails($gmailAccount);

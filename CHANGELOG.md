@@ -1,5 +1,52 @@
 ## [Unreleased]
 
+## [v2.2.0] - 2019-07-29
+
+### Bug Fixes
+
+- **japannetbank-gmail-to-slack**: fix autoloding
+
+### Features
+
+- **japannetbank-gmail-to-slack**: support transfer reservation email
+
+## [v2.1.3] - 2019-07-22
+
+### Features
+
+- **japannetbank-gmail-to-slack**: add docker-compose example
+
+## [v2.1.2] - 2019-07-22
+
+### Bug Fixes
+
+- **japannetbank-gmail-to-slack**: fix autoloding
+
+## [v2.1.1] - 2019-07-22
+
+### Bug Fixes
+
+- **japannetbank-gmail-to-slack**: fix bin paths of composer.json
+
+### Chores
+
+- **monorepo**: add monorepo info
+
+## [v2.1.0] - 2019-07-22
+
+### Chores
+
+- add PhpStorm setting files
+
+### Documentation
+
+- **monorepo**: write changelog for v2.0.0
+
+### Features
+
+- **debug-timer**: implement debug-timer
+- **japannetbank-gmail-to-slack**: new package!
+
 ## [v2.0.0] - 2018-12-05
 
 ### Documentation
@@ -82,7 +129,12 @@
 - **phpcs-psr4-sniff**: improve implementation and add test codes
 - **phpcs-psr4-sniff**: implement first version
 
-[Unreleased]: https://github.com/suin/php/compare/v2.0.0...HEAD
+[Unreleased]: https://github.com/suin/php/compare/v2.2.0...HEAD
+[v2.2.0]: https://github.com/suin/php/compare/v2.1.3...v2.2.0
+[v2.1.3]: https://github.com/suin/php/compare/v2.1.2...v2.1.3
+[v2.1.2]: https://github.com/suin/php/compare/v2.1.1...v2.1.2
+[v2.1.1]: https://github.com/suin/php/compare/v2.1.0...v2.1.1
+[v2.1.0]: https://github.com/suin/php/compare/v2.0.0...v2.1.0
 [v2.0.0]: https://github.com/suin/php/compare/v1.2.1...v2.0.0
 [v1.2.1]: https://github.com/suin/php/compare/v1.2.0...v1.2.1
 [v1.2.0]: https://github.com/suin/php/compare/v1.1.0...v1.2.0

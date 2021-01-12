@@ -19,7 +19,7 @@ final class AutoloadabilityInspector
     public function __construct(string $baseDirectory, string $namespacePrefix)
     {
         $this->baseDirectory = \rtrim($baseDirectory, '/') . '/';
-        $this->namespacePrefix = \rtrim($namespacePrefix, '\\') . '\\';
+        $this->namespacePrefix = $namespacePrefix === '' ? '' : \rtrim($namespacePrefix, '\\') . '\\';
     }
 
     public function inspect(

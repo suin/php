@@ -11,14 +11,14 @@ use PhpCsFixer\Tokenizer\Tokens;
 use SplFileInfo;
 use SymplifyCsFixer\Container\Container;
 
-abstract class FixerProxy implements DefinedFixerInterface
+abstract class FixerProxy implements FixerInterface
 {
     public const NAME = '';
 
     protected const ORIGINAL_FIXER_CLASS = '';
 
     /**
-     * @var DefinedFixerInterface
+     * @var FixerInterface
      */
     private $fixer;
 
@@ -67,7 +67,7 @@ abstract class FixerProxy implements DefinedFixerInterface
         return $this->fixer;
     }
 
-    private static function getFixerFromContainer(): DefinedFixerInterface
+    private static function getFixerFromContainer(): FixerInterface
     {
         return Container::get(static::ORIGINAL_FIXER_CLASS);
     }

@@ -25,11 +25,11 @@
         "issues": "https://github.com/suin/php/issues"
     },
     "require": {
-        "php": ">=7.1 <7.4.0",
-        "symfony/finder": ">=4.2 <5.0.0",
-        "symplify/better-phpdoc-parser": ">=5.0 <=5.4.2",
-        "symplify/coding-standard": ">=5.0 <=5.4.2",
-        "symplify/easy-coding-standard": ">=5.0 <=5.4.2"
+        "php": ">=7.1",
+        "friendsofphp/php-cs-fixer": "^3.2",
+        "symfony/finder": "^5.3",
+        "symfony/yaml": "^5.3",
+        "symplify/coding-standard": "^9.4"
     },
     "autoload": {
         "psr-4": {

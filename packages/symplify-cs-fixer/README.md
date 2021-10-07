@@ -7,7 +7,7 @@ Make [Symplify Coding Standard]'s fixers work with [PHP-CS-Fixer].
 
 Since Symplify Coding Standard's fixers designed for [EasyCodingStandard], its don't work in PHP-CS-Fixer config (`.php_cs` or `.php_cs.dist`). This library provide an adaptor layer that bridge the gap between PHP-CS-Fixer and Symplify Coding Standard.
 
-[EasyCodingStandard]: https://github.com/Symplify/EasyCodingStandard 
+[EasyCodingStandard]: https://github.com/Symplify/EasyCodingStandard
 
 ## Installation
 
@@ -28,27 +28,25 @@ return PhpCsFixer\Config::create()
     ->registerCustomFixers(new SymplifyCsFixer\SymplifyCsFixers())
     ->setRules(
         [
-            SymplifyCsFixer\ArrayPropertyDefaultValueFixer::NAME => true,
+            SymplifyCsFixer\ArrayListItemNewlineFixer::NAME => true,
+            SymplifyCsFixer\ArrayOpenerAndCloserNewlineFixer::NAME => true,
             SymplifyCsFixer\BlankLineAfterStrictTypesFixer::NAME => true,
-            SymplifyCsFixer\BlockPropertyCommentFixer::NAME => true,
-            SymplifyCsFixer\ClassStringToClassConstantFixer::NAME => true,
-            SymplifyCsFixer\FinalInterfaceFixer::NAME => true,
+            SymplifyCsFixer\DocBlockLineLengthFixer::NAME => true,
+            SymplifyCsFixer\DoctrineAnnotationNestedBracketsFixer::NAME => true,
             SymplifyCsFixer\LineLengthFixer::NAME => [
                 'line_length' => 80,
                 'break_long_lines' => true,
                 'inline_short_lines' => true,
             ],
-            SymplifyCsFixer\MethodOrderByTypeFixer::NAME => true,
+            SymplifyCsFixer\MethodChainingNewlineFixer::NAME => true,
+            SymplifyCsFixer\NewlineServiceDefinitionConfigFixer::NAME => true,
             SymplifyCsFixer\ParamReturnAndVarTagMalformsFixer::NAME => true,
-            SymplifyCsFixer\PrivateMethodOrderByUseFixer::NAME => true,
-            SymplifyCsFixer\PropertyNameMatchingTypeFixer::NAME => true,
-            SymplifyCsFixer\PropertyOrderByComplexityFixer::NAME => true,
-            SymplifyCsFixer\RemoveEmptyDocBlockFixer::NAME => true,
-            SymplifyCsFixer\RemoveEndOfFunctionCommentFixer::NAME => true,
-            SymplifyCsFixer\RemoveSuperfluousDocBlockWhitespaceFixer::NAME => true,
-            SymplifyCsFixer\RemoveUselessDocBlockFixer::NAME => true,
-            SymplifyCsFixer\RequireFollowedByAbsolutePathFixer::NAME => true,
-            SymplifyCsFixer\StandaloneLineInMultilineArrayFixer::NAME => true,  
+            SymplifyCsFixer\RemovePHPStormAnnotationFixer::NAME => true,
+            SymplifyCsFixer\RemoveUselessDefaultCommentFixer::NAME => true,
+            SymplifyCsFixer\SpaceAfterCommaHereNowDocFixer::NAME => true,
+            SymplifyCsFixer\StandaloneLineInMultilineArrayFixer::NAME => true,
+            SymplifyCsFixer\StandaloneLinePromotedPropertyFixer::NAME => true,
+            SymplifyCsFixer\StandardizeHereNowDocKeywordFixer::NAME => true,
         ]
     )
     // ...

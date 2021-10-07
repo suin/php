@@ -19,23 +19,21 @@ class FixersListTest extends TestCase
     private function getExpectedFixers(): array
     {
         return [
-            new ArrayPropertyDefaultValueFixer(),
+            new ArrayListItemNewlineFixer(),
+            new ArrayOpenerAndCloserNewlineFixer(),
             new BlankLineAfterStrictTypesFixer(),
-            new BlockPropertyCommentFixer(),
-            new ClassStringToClassConstantFixer(),
-            new FinalInterfaceFixer(),
+            new DocBlockLineLengthFixer(),
+            new DoctrineAnnotationNestedBracketsFixer(),
             new LineLengthFixer(),
-            new MethodOrderByTypeFixer(),
+            new MethodChainingNewlineFixer(),
+            new NewlineServiceDefinitionConfigFixer(),
             new ParamReturnAndVarTagMalformsFixer(),
-            new PrivateMethodOrderByUseFixer(),
-            new PropertyNameMatchingTypeFixer(),
-            new PropertyOrderByComplexityFixer(),
-            new RemoveEmptyDocBlockFixer(),
-            new RemoveEndOfFunctionCommentFixer(),
-            new RemoveSuperfluousDocBlockWhitespaceFixer(),
-            new RemoveUselessDocBlockFixer(),
-            new RequireFollowedByAbsolutePathFixer(),
+            new RemovePHPStormAnnotationFixer(),
+            new RemoveUselessDefaultCommentFixer(),
+            new SpaceAfterCommaHereNowDocFixer(),
             new StandaloneLineInMultilineArrayFixer(),
+            new StandaloneLinePromotedPropertyFixer(),
+            new StandardizeHereNowDocKeywordFixer(),
         ];
     }
 
